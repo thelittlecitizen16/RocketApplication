@@ -6,7 +6,8 @@ namespace RocketApplication
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MenuOption1 menuOption1 = new MenuOption1();
+            menuOption1.RunMenu();
         }
     }
 }

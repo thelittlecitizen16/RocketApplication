@@ -1,0 +1,16 @@
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.csprojAssemblyReference.cache
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.AssemblyInfoInputs.cache
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.AssemblyInfo.cs
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.csproj.CoreCompileInputs.cache
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\RocketApplication.exe
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\RocketApplication.deps.json
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\RocketApplication.runtimeconfig.json
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\RocketApplication.runtimeconfig.dev.json
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\RocketApplication.dll
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\RocketApplication.pdb
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\MenuBuilder.dll
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\bin\Debug\netcoreapp3.1\MenuBuilder.pdb
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.csproj.CopyComplete
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.dll
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.pdb
+C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.genruntimeconfig.cache

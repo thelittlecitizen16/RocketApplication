@@ -6,7 +6,9 @@ namespace RocketApplication
     {
         static void Main(string[] args)
         {
-            MenuOption1 menuOption1 = new MenuOption1();
+            Battery battery = new Battery();
+            RocketFactory rocketFactory = new RocketFactory(battery);
+            RocketMenu menuOption1 = new RocketMenu(rocketFactory , battery);
             menuOption1.RunMenu();
         }
     }

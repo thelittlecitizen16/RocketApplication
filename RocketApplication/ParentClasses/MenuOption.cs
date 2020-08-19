@@ -11,12 +11,12 @@ namespace RocketApplication.ParentClasses
         public MenuBuilder<int> MenuBuilderInt;
         public Menu<int> Menu;
         public ConsoleSystem ConsoleSystem;
-        public Validation Validation;
+        public MenuBuilder.Validation Validation;
 
         public MenuOption()
         {
             ConsoleSystem = new ConsoleSystem();
-            Validation = new Validation();
+            Validation = new MenuBuilder.Validation();
             MenuBuilderString = new MenuBuilder<string>(ConsoleSystem, Validation);
             MenuBuilderInt = new MenuBuilder<int>(ConsoleSystem, Validation);
         }

@@ -9,8 +9,9 @@ using RocketApplication.Options;
 
 namespace RocketApplication
 {
-    public class MenuOption1  : MenuOption
+    public class RocketMenu  : MenuOption
     {
+        #region Options
         private OptionAddRocket _optionAddRocket;
         private OptionBatteryReport _optionBatteryReport;
         private OptionEmptyingBattery _optionEmptyingBattery;
@@ -18,14 +19,21 @@ namespace RocketApplication
         private OptionLaunchRockets _optionLaunchRockets;
         private ExitOption _exitOption;
         private MenuOption<string> _menuOption;
+        #endregion
 
-        public MenuOption1() : base()
+        private RocketFactory _rocketFactory;
+        private Battery _battery;
+
+
+        public RocketMenu(RocketFactory rocketFactory, Battery battery) : base()
         {
-            _optionAddRocket = new OptionAddRocket();
-            _optionBatteryReport = new OptionBatteryReport();
-            _optionEmptyingBattery = new OptionEmptyingBattery();
-            _optionLaunchAllRockets = new OptionLaunchAllRockets();
-            _optionLaunchRockets = new OptionLaunchRockets();
+            _rocketFactory = rocketFactory;
+            _battery = battery;
+            _optionAddRocket = new OptionAddRocket(_rocketFactory, ConsoleSystem);
+            _optionBatteryReport = new OptionBatteryReport(_battery, ConsoleSystem);
+            _optionEmptyingBattery = new OptionEmptyingBattery(_battery, ConsoleSystem);
+            _optionLaunchAllRockets = new OptionLaunchAllRockets(_battery, ConsoleSystem);
+            _optionLaunchRockets = new OptionLaunchRockets(_battery, ConsoleSystem);
             _exitOption = new ExitOption();
         }
 

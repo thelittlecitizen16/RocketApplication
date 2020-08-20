@@ -20,11 +20,6 @@ namespace RocketApplication.Techniques
             Console.WriteLine("Enter the target in KM");
             string userInputTarget = _consoleSystem.ReadString();
 
-            if (userInputTarget)
-            {
-
-            }
-
             return TryCalculateSuccessTechnique(userInputTarget);
         }
         private bool IsInputInRange(double target)

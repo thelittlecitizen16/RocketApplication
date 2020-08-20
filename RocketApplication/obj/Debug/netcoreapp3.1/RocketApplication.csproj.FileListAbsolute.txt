@@ -1,4 +1,3 @@
-C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.csprojAssemblyReference.cache
 C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.AssemblyInfoInputs.cache
 C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.AssemblyInfo.cs
 C:\Users\thelittlecitizen16\Desktop\שבוע שני\rocket\RocketApplication\RocketApplication\obj\Debug\netcoreapp3.1\RocketApplication.csproj.CoreCompileInputs.cache

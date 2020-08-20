@@ -18,7 +18,7 @@ namespace RocketApplication.Techniques
         }
         public bool CalculateSuccessTechnique()
         {
-            Console.WriteLine("Enter the target in KM");
+            _consoleSystem.Write("Enter the target in KM");
             string userInputTarget = _consoleSystem.ReadString();
 
             return TryCalculateSuccessTechnique(userInputTarget);

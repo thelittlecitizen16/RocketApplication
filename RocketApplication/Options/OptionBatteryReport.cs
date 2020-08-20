@@ -22,6 +22,7 @@ namespace RocketApplication.Options
         {
             _consoleSystem.Write($"the rockets amount: {_battery.RocketsAmount().ToString()}");
             _consoleSystem.Write($"All Rockets: ");
+
             foreach (var rocketData in _battery.GetAllRocketsData())
             {
                 _consoleSystem.Write(rocketData);

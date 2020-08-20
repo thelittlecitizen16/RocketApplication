@@ -33,36 +33,32 @@ namespace RocketApplication
         }
         public int LaunchAllRockets()
         {
-            int rocketsCount = 0;
-            int amountOfSuccess = 0;
+            List<IRocket> rockets = LaunchRocket(_allRockets);
+            RemoveFromList(rockets);
 
-           while(_allRockets.ElementAtOrDefault(rocketsCount) !=null)
-            {
-                if (_allRockets[rocketsCount].TryLaunch == true)
-                {
-                    rocketsCount++;
-                }
-                else
-                {
-                    amountOfSuccess += LaunchFewRockets(_allRockets[rocketsCount].RocketType, 1);
-                }     
-            }
-
-            return amountOfSuccess;
+            return rockets.Count();    
         }
-        public int LaunchFewRockets(RocketType rocket, int amount)
+        private void RemoveFromList(List<IRocket> rockets)
         {
-            int count = 0;
-
-            for (int i = 0; i < amount; i++)
+            foreach (var rocket in rockets)
             {
-                if (LaunchRocket(rocket))
-                {
-                    count++;
-                } 
+                _allRockets.Remove(rocket);
             }
-                  
-            return count;
+        }
+        public int LaunchFewRockets(RocketType rocketType, int amount)
+        {
+            List<IRocket> rockets = new List<IRocket>();
+            List<IRocket> rocketsByType = _allRockets.Where(r => r.RocketType == rocketType).ToList();
+
+            if  (rocketsByType.Count() >= amount)
+            {
+                rockets = LaunchRocket(rocketsByType.Take(amount).ToList());
+                RemoveFromList(rockets);
+
+                return rockets.Count();
+            }
+         
+            return 0;
         }
         public int RocketsAmount()
         {
@@ -72,29 +68,26 @@ namespace RocketApplication
         {
            return _allRockets.Select(r => r.RocketType.ToString() + "-" + r.Technique.TechniqueName).ToList();
         }
-        private bool LaunchRocket(RocketType rocket)
+        private List<IRocket> LaunchRocket(List<IRocket> rocketsToLaunch)
         {
-            IRocket rocketToLaunch = _allRockets.FirstOrDefault(r => r.RocketType == rocket);
+            List<IRocket> rockets = new List<IRocket>();
 
-            if (rocketToLaunch!=null)
+            foreach (var rocket in rocketsToLaunch)
             {
-                if (rocketToLaunch.TryLaunch == true)
+                if (rocket.TryLaunch == false)
                 {
-                    return false;
-                }
-                else if (rocketToLaunch.IsSuccess())
-                {
-                    _allRockets.Remove(rocketToLaunch);
-                    return true;
-                }
-                else
-                {
-                    rocketToLaunch.TryLaunch = true;
-                    return false;
-                }
+                    if (rocket.IsSuccess())
+                    {
+                        rockets.Add(rocket);
+                    }
+                    else
+                    {
+                        rocket.TryLaunch = true;
+                    }
+                } 
             }
 
-            return false;
+            return rockets;
         }
 
     }

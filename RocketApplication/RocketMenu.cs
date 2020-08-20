@@ -19,6 +19,7 @@ namespace RocketApplication
         private OptionLaunchRockets _optionLaunchRockets;
         private ExitOption _exitOption;
         private MenuOption<string> _menuOption;
+        private MenuOption<int> _menuOption2;
         #endregion
 
         private RocketFactory _rocketFactory;
@@ -41,10 +42,9 @@ namespace RocketApplication
         {
             var menu1 = MenuBuilderString
                .AddOption("Launch rocket from one kind", _optionLaunchRockets)
-               .AddOption("TotalWar", _optionLaunchAllRockets)
-               .Build();
+               .AddOption("TotalWar", _optionLaunchAllRockets);
 
-            _menuOption = new MenuOption<string>(menu1, "launch rocket menu");
+            _menuOption = new MenuOption<string>(menu1.Build(), "launch rocket menu");
 
             var menu2 = MenuBuilderInt
                 .AddOption(1, _optionAddRocket)
@@ -52,6 +52,12 @@ namespace RocketApplication
                 .AddOption(3, _optionBatteryReport)
                 .AddOption(4, _optionEmptyingBattery)
                 .AddOption(5, _exitOption)
+                .Build();
+
+            _menuOption2 = new MenuOption<int>(menu2, "main menu");
+
+            menu1
+                .AddOption("return to previous menu", _menuOption2)
                 .Build();
 
             menu2.RunMenu();

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RocketApplication
 {
-    public class Battery
+    public class Battery : IBattery
     {
         private List<IRocket> _allRockets;
 

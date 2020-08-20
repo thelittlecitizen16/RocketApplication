@@ -1,4 +1,5 @@
 ﻿using MenuBuilder;
+using MenuBuilder.Interfaces;
 using RocketApplication.ParentClasses;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace RocketApplication.Techniques
     public class RangeTechnique : ProbabilityTechnique, ITechnique
     {
         public string TechniqueName => "Range technique";
-        private ConsoleSystem _consoleSystem;
-        public RangeTechnique(ConsoleSystem consoleSystem)
+        private ISystem _consoleSystem;
+        public RangeTechnique(ISystem consoleSystem)
         {
             _consoleSystem = consoleSystem;
         }
@@ -50,5 +51,7 @@ namespace RocketApplication.Techniques
 
             return false;
         }
+
+
     }
 }

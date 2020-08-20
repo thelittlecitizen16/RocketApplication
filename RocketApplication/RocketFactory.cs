@@ -1,4 +1,5 @@
 ﻿using MenuBuilder;
+using MenuBuilder.Interfaces;
 using RocketApplication.ParentClasses;
 using RocketApplication.Rockets;
 using System;
@@ -7,16 +8,15 @@ using System.Text;
 
 namespace RocketApplication
 {
-    public class RocketFactory
+    public class RocketFactory : IRocketFactory
     {
-        public Battery Battery;
-        private ConsoleSystem _consoleSystem;
-        public RocketFactory(Battery battery, ConsoleSystem consoleSystem)
+        public IBattery Battery;
+        private ISystem _consoleSystem;
+        public RocketFactory(IBattery battery, ISystem consoleSystem)
         {
             Battery = battery;
             _consoleSystem = consoleSystem;
         }
-       
 
         public void AddRocket(RocketType rocketType)
         {

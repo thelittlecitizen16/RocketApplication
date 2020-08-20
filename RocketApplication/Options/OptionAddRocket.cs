@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Text;
 using MenuBuilder;
 using MenuBuilder.Interfaces;
+using RocketApplication.ParentClasses;
+
 namespace RocketApplication.Options
 {
     public class OptionAddRocket : IOption
     {
         public string OptionMessage => "Add Rocket To Battery";
-        private RocketFactory _rocketFactory;
-        private ConsoleSystem _consoleSystem;
+        private IRocketFactory _rocketFactory;
+        private ISystem _consoleSystem;
 
-        public OptionAddRocket(RocketFactory rocketFactory, ConsoleSystem consoleSystem)
+        public OptionAddRocket(IRocketFactory rocketFactory, ISystem consoleSystem)
         {
             _rocketFactory = rocketFactory;
             _consoleSystem = consoleSystem;

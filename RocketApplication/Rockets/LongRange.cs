@@ -1,4 +1,5 @@
 ﻿using MenuBuilder;
+using MenuBuilder.Interfaces;
 using RocketApplication.ParentClasses;
 using RocketApplication.Techniques;
 using System;
@@ -14,7 +15,7 @@ namespace RocketApplication.Rockets
         public ITechnique Technique { get; }
         public bool TryLaunch { get; set; }
 
-        public LongRange(ConsoleSystem consoleSystem , ITechnique technique = null)
+        public LongRange(ISystem consoleSystem , ITechnique technique = null)
         {
             Technique = technique ?? new RangeTechnique(consoleSystem);
             RocketType = RocketType.LongRange;

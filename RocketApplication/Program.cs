@@ -11,6 +11,7 @@ namespace RocketApplication
             ConsoleSystem consoleSystem = new ConsoleSystem();
             RocketFactory rocketFactory = new RocketFactory(battery, consoleSystem);
             RocketMenu menuOption1 = new RocketMenu(rocketFactory , battery);
+
             menuOption1.RunMenu();
         }
     }

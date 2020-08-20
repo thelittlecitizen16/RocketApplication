@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Text;
 using MenuBuilder;
 using MenuBuilder.Interfaces;
+using RocketApplication.ParentClasses;
+
 namespace RocketApplication.Options
 {
     public class OptionEmptyingBattery : IOption
     {
         public string OptionMessage => "emptying battery";
-        private Battery _battery;
-        private ConsoleSystem _consoleSystem;
+        private IBattery _battery;
+        private ISystem _consoleSystem;
 
-        public OptionEmptyingBattery(Battery battery, ConsoleSystem consoleSystem)
+        public OptionEmptyingBattery(IBattery battery, ISystem consoleSystem)
         {
             _battery = battery;
             _consoleSystem = consoleSystem;

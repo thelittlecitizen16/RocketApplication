@@ -22,11 +22,11 @@ namespace RocketApplication
         private MenuOption<int> _menuOption2;
         #endregion
 
-        private RocketFactory _rocketFactory;
-        private Battery _battery;
+        private IRocketFactory _rocketFactory;
+        private IBattery _battery;
 
 
-        public RocketMenu(RocketFactory rocketFactory, Battery battery) : base()
+        public RocketMenu(IRocketFactory rocketFactory, IBattery battery) : base()
         {
             _rocketFactory = rocketFactory;
             _battery = battery;

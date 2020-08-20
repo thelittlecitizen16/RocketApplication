@@ -9,8 +9,9 @@ using RocketApplication.Options;
 
 namespace RocketApplication
 {
-    public class MenuOption1  : MenuOption
+    public class RocketMenu  : MenuOption
     {
+        #region Options
         private OptionAddRocket _optionAddRocket;
         private OptionBatteryReport _optionBatteryReport;
         private OptionEmptyingBattery _optionEmptyingBattery;
@@ -18,14 +19,22 @@ namespace RocketApplication
         private OptionLaunchRockets _optionLaunchRockets;
         private ExitOption _exitOption;
         private MenuOption<string> _menuOption;
+        private MenuOption<int> _menuOption2;
+        #endregion
 
-        public MenuOption1() : base()
+        private IRocketFactory _rocketFactory;
+        private IBattery _battery;
+
+
+        public RocketMenu(IRocketFactory rocketFactory, IBattery battery) : base()
         {
-            _optionAddRocket = new OptionAddRocket();
-            _optionBatteryReport = new OptionBatteryReport();
-            _optionEmptyingBattery = new OptionEmptyingBattery();
-            _optionLaunchAllRockets = new OptionLaunchAllRockets();
-            _optionLaunchRockets = new OptionLaunchRockets();
+            _rocketFactory = rocketFactory;
+            _battery = battery;
+            _optionAddRocket = new OptionAddRocket(_rocketFactory, ConsoleSystem);
+            _optionBatteryReport = new OptionBatteryReport(_battery, ConsoleSystem);
+            _optionEmptyingBattery = new OptionEmptyingBattery(_battery, ConsoleSystem);
+            _optionLaunchAllRockets = new OptionLaunchAllRockets(_battery, ConsoleSystem);
+            _optionLaunchRockets = new OptionLaunchRockets(_battery, ConsoleSystem);
             _exitOption = new ExitOption();
         }
 
@@ -33,10 +42,9 @@ namespace RocketApplication
         {
             var menu1 = MenuBuilderString
                .AddOption("Launch rocket from one kind", _optionLaunchRockets)
-               .AddOption("TotalWar", _optionLaunchRockets)
-               .Build();
+               .AddOption("TotalWar", _optionLaunchAllRockets);
 
-            _menuOption = new MenuOption<string>(menu1, "launch rocket menu");
+            _menuOption = new MenuOption<string>(menu1.Build(), "launch rocket menu");
 
             var menu2 = MenuBuilderInt
                 .AddOption(1, _optionAddRocket)
@@ -44,6 +52,12 @@ namespace RocketApplication
                 .AddOption(3, _optionBatteryReport)
                 .AddOption(4, _optionEmptyingBattery)
                 .AddOption(5, _exitOption)
+                .Build();
+
+            _menuOption2 = new MenuOption<int>(menu2, "main menu");
+
+            menu1
+                .AddOption("return to previous menu", _menuOption2)
                 .Build();
 
             menu2.RunMenu();

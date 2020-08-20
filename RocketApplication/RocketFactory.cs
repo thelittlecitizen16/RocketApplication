@@ -1,4 +1,5 @@
-﻿using RocketApplication.ParentClasses;
+﻿using MenuBuilder;
+using RocketApplication.ParentClasses;
 using RocketApplication.Rockets;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,11 @@ namespace RocketApplication
     public class RocketFactory
     {
         public Battery Battery;
-        public RocketFactory(Battery battery)
+        private ConsoleSystem _consoleSystem;
+        public RocketFactory(Battery battery, ConsoleSystem consoleSystem)
         {
             Battery = battery;
+            _consoleSystem = consoleSystem;
         }
        
 
@@ -27,6 +30,9 @@ namespace RocketApplication
                     break;
                 case RocketType.Torpedo:
                     Battery.AddRocket(new Torpedo());
+                    break;
+                case RocketType.LongRange:
+                    Battery.AddRocket(new LongRange(_consoleSystem)); 
                     break;
                 default:
                     break;

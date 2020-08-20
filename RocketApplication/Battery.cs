@@ -33,14 +33,22 @@ namespace RocketApplication
         }
         public int LaunchAllRockets()
         {
-            int count = 0;
+            int rocketsCount = 0;
+            int amountOfSuccess = 0;
 
-            foreach (var rocket in _allRockets)
+           while(_allRockets.ElementAtOrDefault(rocketsCount) !=null)
             {
-                count += LaunchFewRockets(rocket.RocketType, 1);
+                if (_allRockets[rocketsCount].TryLaunch == true)
+                {
+                    rocketsCount++;
+                }
+                else
+                {
+                    amountOfSuccess += LaunchFewRockets(_allRockets[rocketsCount].RocketType, 1);
+                }     
             }
 
-            return count;
+            return amountOfSuccess;
         }
         public int LaunchFewRockets(RocketType rocket, int amount)
         {

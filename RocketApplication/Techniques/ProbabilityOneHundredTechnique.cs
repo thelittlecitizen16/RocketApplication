@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RocketApplication.Techniques
 {
-    public class ProbabilityOneHundredTechnique : ITechnique
+    public class ProbabilityOneHundredTechnique :  ITechnique
     {
         public string TechniqueName => "probability one hundred technique";
 

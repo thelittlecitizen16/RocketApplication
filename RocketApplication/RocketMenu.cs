@@ -41,7 +41,7 @@ namespace RocketApplication
         {
             var menu1 = MenuBuilderString
                .AddOption("Launch rocket from one kind", _optionLaunchRockets)
-               .AddOption("TotalWar", _optionLaunchRockets)
+               .AddOption("TotalWar", _optionLaunchAllRockets)
                .Build();
 
             _menuOption = new MenuOption<string>(menu1, "launch rocket menu");

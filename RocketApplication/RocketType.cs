@@ -8,6 +8,7 @@ namespace RocketApplication
     {
         Torpedo,
         Ballistic,
-        Cruise
+        Cruise,
+        LongRange
     }
 }

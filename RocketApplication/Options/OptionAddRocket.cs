@@ -19,24 +19,33 @@ namespace RocketApplication.Options
 
         public void Run()
         {
-            _consoleSystem.Write("Enter the Rocket type:");
+            _consoleSystem.Write("Enter Rocket type from below:");
+
+            PrintEnumTypes();
+
             string userRocketType = _consoleSystem.ReadString();
 
             CheckUserInput(userRocketType);
-        } 
+        }
+        private void PrintEnumTypes()
+        {
+            foreach (string rocketType in Enum.GetNames(typeof(RocketType)))
+            {
+                _consoleSystem.Write(rocketType);
+            }
+        }
 
         private void CheckUserInput(string userRocketType)
         {
-            RocketType rocketType;
-
-            if (Enum.TryParse(userRocketType, out rocketType))
+            if (RocketValidation.IsRocketTypeValid(userRocketType))
             {
+                RocketType rocketType = (RocketType)Enum.Parse(typeof(RocketType), userRocketType);
                 _rocketFactory.AddRocket(rocketType);
             }
             else
             {
                 _consoleSystem.Write($"There is no rocket with the type: {userRocketType}");
-            }
+            }      
         }
     }
 }
